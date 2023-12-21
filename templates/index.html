@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}My Library{% endblock %}
+
+{% block content %}
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-emphasis library">My Library</h1>
+
+    <div class="overflow-hidden" style="max-height: 60vh;">
+      <div class="container px-5">
+        <img src="static/images/book.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="books" height=50% loading="lazy">
+      </div>
+    </div>
+  </div>
+<div class="album py-5 bg-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+{% if not books %}
+        <p>Library is Empty</p>
+    {% else %}
+        {% for book in books %}
+
+            <div class="col">
+              <div class="card shadow-sm">
+                  <img src="static/images/book_title.jpg" alt="open book">
+                <div class="card-body gray_bg">
+                    <p class="card-text">{{ book["title"] }} - {{ book["author"] }}
+                        - {{ book["rating"] }} </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary dark_gray"><a href="{{ url_for('delete', id= book.id) }}" class="yellow">Delete </a></button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary dark_gray"><a href="{{ url_for('edit', id=book.id) }}" class="yellow">Edit Rating</a></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+              </div>
+            </div>
+                </div>
+
+<button type="button" class="btn btn-outline-secondary  btn-lg px-4 me-sm-3 yellow_button gray_text"><a href="{{ url_for('add') }}" class="gray_text">Add New Book</a></button>
+{% endblock %}

@@ -1,0 +1,61 @@
+body {
+background-color: #333;
+color: white;
+}
+
+.yellow_button {
+background-color: #ffc107;
+}
+.gray_text{
+color: #333333;
+}
+
+.dark_gray{
+background-color: #333333;
+}
+
+.yellow{
+color: #ffc107;
+}
+
+.gray_bg {
+background-color: #6c757d;
+}
+.yellow_text {
+color: #ffc107;
+border: solid #ffc107;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  color: white;
+  background-color: #333;
+}
+
+.space-above {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.library {
+margin-bottom: 50px;
+color: white;
+}
+
+p {
+font-family: serif;
+font-size: 1.5em;
+}
+
+input {
+border: 0.2rem solid #ffc107;
+border-radius: 2rem;
+}
+
+.text {
+font-family: serif;
+font-size: 1.5em;
+}
